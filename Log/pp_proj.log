@@ -1,0 +1,23 @@
+[PMAC_PROJECT]
+Start of Project Loading using INI File: "/var/ftp/usrflash/Project/Configuration/pp_proj.ini"
+Including Project File: /var/ftp/usrflash/Project/Configuration/pp_disable.txt 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Global Includes/CS3_2Jack.pmh 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Global Includes/global definitions.pmh 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Global Includes/Motor 1.pmh 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Global Includes/Motor 2.pmh 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Global Includes/Motor 3.pmh 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Global Includes/Motor 4.pmh 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Global Includes/Motor 5.pmh 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Global Includes/Motor 6.pmh 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Global Includes/Motor 7.pmh 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Global Includes/Motor 8.pmh 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Global Includes/PLCS.pmh 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Global Includes/trajectory_scan_definitions_ppmac.pmh 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Kinematic Routines/CS3_2Jack.kin 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Kinematic Routines/slits.kin 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Motion Programs/PROG10_CS_motion.pmc 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/Motion Programs/trajectory_scan_code_ppmac.pmc 
+Including Project File: /var/ftp/usrflash/Project/PMAC Script Language/PLC Programs/LabPLCs.plc 
+Including Project File: /var/ftp/usrflash/Project/Configuration/pp_startup.txt 
+91 Project Symbols were created for gpascii -2 communication
+Status: Successful load of preprocessed File: "/var/ftp/usrflash/Temp/pp_proj.pma"

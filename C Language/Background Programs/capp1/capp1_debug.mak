@@ -23,6 +23,43 @@
 
 PMAC_ARCH=ppc465-2
 
+ifeq ($(PMAC_ARCH),armLS1043A)
+ARCH=arm
+CROSS_COMPILE=arm-omron49-linux-gnueabihf-
+KDIR=/opt/armv71-4.1.18-ipipe-quadcore/usr/src/ipipe-ipipe-core-4.1.18-arm-9-quadcore
+KSRC=/opt/armv71-4.1.18-ipipe-quadcore/usr/src/ipipe-ipipe-core-4.1.18-arm-9-quadcore
+CC=arm-omron49-linux-gnueabihf-gcc
+AS=arm-omron49-linux-gnueabihf-as
+LD=arm-omron49-linux-gnueabihf-gcc
+INCLUDE=/opt/armv71-4.1.18-ipipe-quadcore/usr/lib/gcc/arm-linux-gnueabihf/4.6/include
+XENOMAI_INC_DIR=/opt/armv71-4.1.18-ipipe-quadcore/usr/xenomai/include
+XENOMAI_LIB_DIR=/opt/armv71-4.1.18-ipipe-quadcore/usr/xenomai/lib
+LIBMATHDIR=/usr/local/dtlibs/libmath
+RPATH=-Wl,-rpath-link,/opt/armv71-4.1.18-ipipe-quadcore/lib/arm-linux-gnueabihf
+LIBMATH_RPATH=-Wl,-rpath,/opt/ppmac/libmath
+ROOTFS_DIR=/opt/armv71-4.1.18-ipipe-quadcore
+LIBS=  -ldl -lppmac -lpthread_rt -lxenomai -lpthread -lgcc_s -lmath -lm -L$(LIBMATHDIR)
+endif
+
+ifeq ($(PMAC_ARCH),armLS1043A-usermode)
+ARCH=arm
+CROSS_COMPILE=arm-omron49-linux-gnueabihf-
+KDIR=/opt/armv71-4.1.18-ipipe-quadcore/usr/src/ipipe-ipipe-core-4.1.18-arm-9
+KSRC=/opt/armv71-4.1.18-ipipe-quadcore/usr/src/ipipe-ipipe-core-4.1.18-arm-9
+CC=arm-omron49-linux-gnueabihf-gcc
+AS=arm-omron49-linux-gnueabihf-as
+LD=arm-omron49-linux-gnueabihf-gcc
+INCLUDE=/opt/armv71-4.1.18-ipipe-quadcore/usr/lib/gcc/arm-linux-gnueabihf/4.6/include
+XENOMAI_INC_DIR=/opt/armv71-4.1.18-ipipe-quadcore/usr/xenomai/include
+XENOMAI_LIB_DIR=/opt/armv71-4.1.18-ipipe-quadcore/usr/xenomai/lib
+LIBMATHDIR=/usr/local/dtlibs/libmath
+RPATH=-Wl,-rpath-link,/opt/armv71-4.1.18-ipipe-quadcore/lib/arm-linux-gnueabihf
+LIBMATH_RPATH=-Wl,-rpath,/opt/ppmac/libmath
+ROOTFS_DIR=/opt/armv71-4.1.18-ipipe-quadcore
+EXTRA_DEFINES=-D__POSIX_MODE__ -D__ACONTIS__
+LIBS=  -ldl -lppmac -lpthread_rt -lxenomai -lpthread -lgcc_s -lmath -lm -L$(LIBMATHDIR)
+endif
+
 ifeq ($(PMAC_ARCH),armv71-4.1.18)
 ARCH=arm
 CROSS_COMPILE=arm-omron49-linux-gnueabihf-
@@ -165,6 +202,43 @@ LIBMATH_RPATH=-Wl,-rpath,/opt/ppmac/libmath
 ROOTFS_DIR=/opt/i386-preemptrt-rootfs
 EXTRA_DEFINES=-D__POSIX_MODE__ -D__ACONTIS__ -D__HYPERVISOR__
 LIBS=  -ldl -lrt -lpthread -lppmac -lm -lmath -L$(LIBMATHDIR)
+endif
+
+ifeq ($(PMAC_ARCH),lx86)
+ARCH=i386
+CROSS_COMPILE=i686-meau-linux-gnu-
+KDIR=/opt/lx86-linux-rootfs/usr/src/linux-headers-3.14.28-xenomai-2.6.4
+KSRC=/opt/lx86-linux-rootfs/usr/src/linux-headers-3.14.28-xenomai-2.6.4
+CC=i686-meau-linux-gnu-gcc
+AS=i686-meau-linux-gnu-as
+LD=i686-meau-linux-gnu-gcc
+INCLUDE=/opt/lx86-linux-rootfs/usr/lib/gcc/i686-linux-gnu/4.9/include
+XENOMAI_INC_DIR=/opt/lx86-linux-rootfs/usr/include/xenomai
+XENOMAI_LIB_DIR=/opt/lx86-linux-rootfs/usr/lib
+LIBMATHDIR=/usr/local/dtlibs/libmath
+RPATH=-Wl,-rpath-link,/opt/lx86-linux-rootfs/lib/i386-linux-gnu
+LIBMATH_RPATH=-Wl,-rpath,/opt/ppmac/libmath
+ROOTFS_DIR=/opt/lx86-linux-rootfs
+LIBS=  -ldl -lppmac -lpthread_rt -lxenomai -lpthread -lm -lmath -L$(LIBMATHDIR)
+endif
+
+ifeq ($(PMAC_ARCH),lx86-usermode)
+ARCH=i386
+CROSS_COMPILE=i686-meau-linux-gnu-
+KDIR=/opt/lx86-linux-rootfs/usr/src/linux-headers-3.14.28-xenomai-2.6.4
+KSRC=/opt/lx86-linux-rootfs/usr/src/linux-headers-3.14.28-xenomai-2.6.4
+CC=i686-meau-linux-gnu-gcc
+AS=i686-meau-linux-gnu-as
+LD=i686-meau-linux-gnu-gcc
+INCLUDE=/opt/lx86-linux-rootfs/usr/lib/gcc/i686-linux-gnu/4.9/include
+XENOMAI_INC_DIR=/opt/lx86-linux-rootfs/usr/include/xenomai
+XENOMAI_LIB_DIR=/opt/lx86-linux-rootfs/usr/lib
+LIBMATHDIR=/usr/local/dtlibs/libmath
+RPATH=-Wl,-rpath-link,/opt/lx86-linux-rootfs/lib/i386-linux-gnu
+LIBMATH_RPATH=-Wl,-rpath,/opt/ppmac/libmath
+ROOTFS_DIR=/opt/lx86-linux-rootfs
+EXTRA_DEFINES=-D__POSIX_MODE__ -D__ACONTIS__
+LIBS=  -ldl -lppmac -lpthread_rt -lxenomai -lpthread -lm -lmath -L$(LIBMATHDIR)
 endif
 
 ifeq ($(PMAC_ARCH),ppc465-2)
